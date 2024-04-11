@@ -7,13 +7,15 @@ import { getResenhas } from "../actions/resenhas/get";
 
 interface Resenha{
   id: number,
-  nome: string,
-  icone: string
+  tituloResenha: string,
+  conteudoResenha: string,
+  icone: string,
+  nota: number
 }
 
 export default async function Resenha() {
 
-
+  
   const resenhas: Resenha[] = await getResenhas()
 
   return (
@@ -24,8 +26,8 @@ export default async function Resenha() {
       
         <div className="flex items-center">
           <h2 className="text-3xl font-semibold text-violet-950 p-2">Minhas Resenhas</h2>
-          <Link href="/resenhas/new">
-            <Button startContent={<Plus/>} color="primary">Nova Resenha</Button>
+          <Link href="/resenha/new">
+            <Button startContent={<Plus/>} className="bg-violet-500">Nova Resenha</Button>
           </Link>
         </div>
         

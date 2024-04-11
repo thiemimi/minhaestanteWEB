@@ -3,8 +3,12 @@
 import { redirect } from "next/navigation"
 
 export async function create(formData: FormData){
+    await new Promise(r => setTimeout(r, 3000))
+
     const data = {
-      nome: formData.get("nome"),
+      tituloResenha: formData.get("tituloResenha"),
+      descricaoResenha: formData.get("conteudoResenha"),
+      nota: formData.get("nota"),
       icone: "book"
     }
 
@@ -12,12 +16,12 @@ export async function create(formData: FormData){
       method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "aplication/json"
+        "Content-Type": "application/json"
       }
 
     }
 
-    const resp = await fetch (`${process.env.API_BASE_URL}/resenha`, options)
+    const resp = await fetch (process.env.API_BASE_URL + "/resenha", options)
 
-    if (resp.status == 200) redirect("/resenhas")
+    if (resp.status == 201) redirect("/resenha")
   }
