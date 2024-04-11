@@ -1,5 +1,6 @@
 'use client' 
 
+import { destroy } from "@/app/actions/resenhas/destroy";
 import {
     Dropdown,
     DropdownTrigger,
@@ -11,8 +12,12 @@ import {
 import { Trash } from "lucide-react";
 import { Pencil } from "lucide-react";
 import { ChevronDown } from "lucide-react";
+import { MouseEventHandler } from "react";
 
-export function DropDownAction(){
+interface DropDownActionProps{
+    onDelete: MouseEventHandler
+}
+export function DropDownAction({onDelete}: DropDownActionProps){
     return(
     <Dropdown>
         <DropdownTrigger>
@@ -20,9 +25,14 @@ export function DropDownAction(){
         </DropdownTrigger>
     <DropdownMenu aria-label="Static Actions" className="text-danger">
         <DropdownItem key="edit" startContent={<Pencil/>}>Editar</DropdownItem>
-    <DropdownItem key="delete" startContent={<Trash/>}className="text-danger" color="danger">
-        Apagar
-    </DropdownItem>
+        <DropdownItem  
+            key="delete" 
+            startContent={<Trash/>}
+            className="text-danger" 
+            color="danger"
+            onClick={onDelete}>
+            Apagar
+        </DropdownItem>
     </DropdownMenu>
     </Dropdown>
     )
