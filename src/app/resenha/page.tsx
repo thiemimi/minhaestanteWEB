@@ -30,9 +30,9 @@ export default async function Resenha() {
           </Link>
         </div>
         
-        {/* <div id="data">
-          {resenhas.map(resenha => <ResenhaItem resenha={resenha}/>)}
-        </div> */}
+        <div id="data">
+          {resenhas?.map(resenha => <ResenhaItem resenha={resenha}/>)}
+        </div>  
 
       
       </section>

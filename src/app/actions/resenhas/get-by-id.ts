@@ -7,6 +7,6 @@ export async function getById(id: number){
     if(!resp.ok){
         throw new Error("resenha não encontrada!")
     }
-
+    
     return await resp.json()
 }

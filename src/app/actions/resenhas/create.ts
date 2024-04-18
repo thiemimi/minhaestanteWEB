@@ -7,7 +7,7 @@ export async function create(prevState: any,formData: FormData){
 
     const data = {
       tituloResenha: formData.get("tituloResenha"),
-      descricaoResenha: formData.get("conteudoResenha"),
+      conteudoResenha: formData.get("conteudoResenha"),
       nota: formData.get("nota"),
       icone: formData.get("book")
     }

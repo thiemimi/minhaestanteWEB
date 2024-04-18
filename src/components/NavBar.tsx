@@ -26,9 +26,9 @@ export default function NavBar(props: NavBarProps) {
             </ul>
             <div className="flex items-center px-4">
                 <h1 className="text-2xl font-bold px-6">MinhaEstante</h1>
-                <div className="w-16 rounded-full overflow-hidden">
+                {/* <div className="w-16 rounded-full overflow-hidden">
                     <img src="https://i.pravatar.cc/300" alt="Avatar do usuario" />
-                </div>
+                </div> */}
             </div>
         </nav>
     )

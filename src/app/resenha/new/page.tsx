@@ -15,7 +15,7 @@ const initialState = {
   messageNome: '',
 }
 
-export default async function CadastrarResenha() {
+export default function CadastrarResenha() {
   const [state, formAction] = useFormState(create, initialState)
 
   return (
@@ -25,24 +25,26 @@ export default async function CadastrarResenha() {
       <form action={formAction} className="flex flex-col gap-3 bg-purple-700 p-6 m-6 rounded min-w-[500px]">
         <h2 className="text-2xl font-bold">Cadastrar Resenha</h2>
         <Input
-          key="tituloResenha"
-          label="Titulo da resenha"
-          labelPlacement={"outside"}
-          name="tituloResenha"
-          isInvalid={state?.messageNome != ''}
-          errorMessage={state?.messageNome}
+            key="tituloResenha"
+            label="Titulo da resenha"
+            labelPlacement={"outside"}
+            name="tituloResenha"
+            isInvalid={state?.messageNome != ''}
+            errorMessage={state?.messageNome}
           />
+         
+            <Input 
+              key="conteudoResenha"
+              label="Conteudo da resenha"
+              labelPlacement={"outside"}
+              name="conteudoResenha"
+            />
+          
           <Input 
-          key="conteudoResenha"
-          label="Conteudo da resenha"
-          labelPlacement={"outside"}
-          name="ConteudoResenha"
-          />
-          <Input 
-          key="nota"
-          label ="Nota"
-          labelPlacement={"outside"}
-          name="nota"
+            key="nota"
+            label ="Nota"
+            labelPlacement={"outside"}
+            name="nota"
           />
           <Autocomplete
               label="icone"
@@ -61,10 +63,9 @@ export default async function CadastrarResenha() {
               <Button variant="bordered" startContent={<ArrowLeft/>}>Cancelar</Button>
             </Link>
             <SubmitButton/>
-           
           </div>
-      </form>
-      
+
+      </form>    
     </main>
   );
 }

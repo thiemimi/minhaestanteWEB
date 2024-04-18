@@ -28,8 +28,17 @@ export default function ResenhaItem(props: ResenhaItemProps){
     return(
         <div key={resenha.id} className="inline-block justify-between bg-purple-950 rounded min-w-[250px] min-h-[200px] p-4 m-4" id="data-row">
             <div className="flex gap-1 justify-between">
-                <Icon name={resenha.icone}/> 
-                <span>{resenha.tituloResenha}</span>
+                <div className="flex flex-col">
+                    <div>
+                        <Icon name={resenha.icone}/>
+                        <span>{resenha.tituloResenha}</span>
+                    </div>
+                    
+                    <div className="inline-block rounded p-2 m-2">
+                        <span>{resenha.conteudoResenha}</span>
+                    </div>
+                </div>
+                
                 <DropDownAction 
                     onEdit={() => router.push(`/resenha/${resenha.id}`)}
                     onDelete={handleDelete}/>

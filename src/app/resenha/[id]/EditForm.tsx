@@ -37,13 +37,13 @@ export function EditForm(resenha: Resenha){
                 key="conteudoResenha"
                 label="Conteudo da resenha"
                 labelPlacement={"outside"}
+                name="conteudoResenha"
                 defaultValue={resenha.conteudoResenha}
-                name="ConteudoResenha"
             />
             <Input 
                 key="nota"
                 label ="Nota"
-                //defaultValue={resenha.nota}
+                defaultValue={resenha.nota.toString()}
                 labelPlacement={"outside"}
                 name="nota"
             />
@@ -51,10 +51,10 @@ export function EditForm(resenha: Resenha){
                 label="icone"
                 placeholder="Procurar icone"
                 defaultItems={icons}
-                //defaultValue={resenha.icone}
-                name="icone"
                 labelPlacement={"outside"}
-                >
+                name="icone"
+                defaultInputValue={resenha.icone}   
+            >
                 {(icon) =><AutocompleteItem key={icon.name} startContent={<Icon name={icon.name}/>}>
                             {icon.name}
                             </AutocompleteItem>}
