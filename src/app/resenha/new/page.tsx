@@ -1,13 +1,15 @@
 'use client'
 
 import NavBar from "@/components/NavBar";
-import { Input } from "@nextui-org/react";
+import { Autocomplete, AutocompleteItem, Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
 import { create } from "@/app/actions/resenhas/create";
 import { SubmitButton } from "@/components/SubmitButton";
 import { useFormState } from "react-dom";
+import { icons } from "@/app/utils/icons";
+import Icon from "@/components/Icon";
 
 export default async function CadastrarResenha() {
 
@@ -42,6 +44,17 @@ export default async function CadastrarResenha() {
           labelPlacement={"outside"}
           name="nota"
           />
+          <Autocomplete
+              label="icone"
+              placeholder="Procurar icone"
+              defaultItems={icons}
+              name="icone"
+              labelPlacement={"outside"}
+            >
+              {(icon) =><AutocompleteItem key={icon.name} startContent={<Icon name={icon.name}/>}>
+                          {icon.name}
+                        </AutocompleteItem>}
+          </Autocomplete>
           
           <div className="flex justify-between mt-4">
             <Link href="/resenha">

@@ -33,8 +33,9 @@ export default async function Resenha() {
         {/* <div id="data">
           {resenhas.map(resenha => <ResenhaItem resenha={resenha}/>)}
         </div> */}
+        <p>Carregando...</p>
+        
 
-      
       </section>
       
     </main>

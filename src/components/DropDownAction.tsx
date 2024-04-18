@@ -15,16 +15,28 @@ import { ChevronDown } from "lucide-react";
 import { MouseEventHandler } from "react";
 
 interface DropDownActionProps{
+    onEdit: MouseEventHandler
     onDelete: MouseEventHandler
 }
-export function DropDownAction({onDelete}: DropDownActionProps){
+export function DropDownAction({onEdit, onDelete}: DropDownActionProps){
     return(
     <Dropdown>
         <DropdownTrigger>
            <ChevronDown/>
         </DropdownTrigger>
     <DropdownMenu aria-label="Static Actions" className="text-danger">
-        <DropdownItem key="edit" startContent={<Pencil/>}>Editar</DropdownItem>
+
+        <DropdownItem 
+            key="edit" 
+            startContent={<Pencil/>}
+            onClick={onEdit}
+            
+            >
+                Editar
+        </DropdownItem>
+
+
+
         <DropdownItem  
             key="delete" 
             startContent={<Trash/>}

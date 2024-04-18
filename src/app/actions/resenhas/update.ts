@@ -2,9 +2,10 @@
 
 import { redirect } from "next/navigation"
 
-export async function create(prevState: any,formData: FormData){
-    await new Promise(r => setTimeout(r, 3000))
+export async function update(prevState: any,formData: FormData){
+    await new Promise(r => setTimeout(r, 1000))
 
+    const id = formData.get("id")
     const data = {
       tituloResenha: formData.get("tituloResenha"),
       descricaoResenha: formData.get("conteudoResenha"),
@@ -13,7 +14,7 @@ export async function create(prevState: any,formData: FormData){
     }
 
     const options = {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json"
@@ -21,7 +22,7 @@ export async function create(prevState: any,formData: FormData){
 
     }
 
-    const resp = await fetch (process.env.API_BASE_URL + "/resenha", options)
+    const resp = await fetch (`${process.env.API_BASE_URL}/resenha/${id}`, options)
 
     if (resp.ok){
       redirect("/resenha")
@@ -32,5 +33,12 @@ export async function create(prevState: any,formData: FormData){
         messageNome: "validação falhou"
       }
     }
+
+    if (resp.status == 404){
+      return{
+        messageNome: "resenha não encontrada"
+      }
+    }
+    
     
   }

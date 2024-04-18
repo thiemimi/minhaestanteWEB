@@ -5,18 +5,14 @@ import Icon from "@/components/Icon";
 import { ChevronDown } from "lucide-react";
 import { destroy } from "../actions/resenhas/destroy";
 import { toast } from "react-hot-toast"
+import { useRouter } from "next/navigation";
 
 interface ResenhaItemProps {
-    resenha: {
-        id: number,
-        tituloResenha: string,
-	    conteudoResenha: string,
-	    icone: string,
-        nota: number
-    }
+    resenha: Resenha
 }
 
 export default function ResenhaItem(props: ResenhaItemProps){
+    const router = useRouter()
     const { resenha } = props
 
     function handleDelete(){
@@ -34,7 +30,9 @@ export default function ResenhaItem(props: ResenhaItemProps){
             <div className="flex gap-1 justify-between">
                 <Icon name={resenha.icone}/> 
                 <span>{resenha.tituloResenha}</span>
-                <DropDownAction onDelete={handleDelete}/>
+                <DropDownAction 
+                    onEdit={() => router.push(`/resenha/${resenha.id}`)}
+                    onDelete={handleDelete}/>
             </div>
         </div>
     )
