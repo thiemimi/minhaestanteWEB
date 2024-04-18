@@ -11,11 +11,11 @@ import { useFormState } from "react-dom";
 import { icons } from "@/app/utils/icons";
 import Icon from "@/components/Icon";
 
-export default async function CadastrarResenha() {
+const initialState = {
+  messageNome: '',
+}
 
-  const initialState = {
-    messageNome: '',
-  }
+export default async function CadastrarResenha() {
   const [state, formAction] = useFormState(create, initialState)
 
   return (
