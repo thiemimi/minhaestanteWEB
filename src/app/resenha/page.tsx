@@ -22,7 +22,7 @@ export default async function Resenha() {
     <main className="flex min-h-screen flex-col items-center">
       <NavBar active="resenhas"/>
 
-      <section className="min-w-[850px] p-8 m-2" style={{ backgroundColor: '#E6D6C1', width: '910px', boxShadow: '-3px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '40px'} }>
+      <section className="min-w-[850px] p-8 m-4" style={{ backgroundColor: '#E6D6C1', width: '910px', boxShadow: '-3px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '40px'} }>
 
         <div className="flex items-center justify-between p-4">
           <h2 className="text-3xl font-bold text-violet-950 p-2" style={{ color: "#321F18" }}>MINHAS RESENHAS</h2>

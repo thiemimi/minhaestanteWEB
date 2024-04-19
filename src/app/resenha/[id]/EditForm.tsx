@@ -1,6 +1,6 @@
 "use client"
 
-import { Autocomplete, AutocompleteItem, Input, input } from "@nextui-org/react";
+import { Autocomplete, AutocompleteItem, Input, Textarea, input } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
@@ -12,6 +12,7 @@ import { update } from "@/app/actions/resenhas/update";
 
 const initialState = {
     messageNome: '',
+    conteudoResenha: ''
 }
   
 
@@ -33,13 +34,19 @@ export function EditForm(resenha: Resenha){
                 isInvalid={state?.messageNome != ''}
                 errorMessage={state?.messageNome}
             />
-            <Input 
-                key="conteudoResenha"
-                label="Conteudo da resenha"
-                labelPlacement={"outside"}
-                name="conteudoResenha"
-                defaultValue={resenha.conteudoResenha}
-            />
+           {state?.conteudoResenha !== undefined && (
+          <Textarea 
+            key="conteudoResenha"
+            label="Conteudo da resenha"
+            labelPlacement={"outside"}
+            name="conteudoResenha" 
+            defaultValue={resenha.conteudoResenha}
+            disableAutosize
+            classNames={{
+              input: "resize-y min-h-[150px]",
+            }}
+          />
+        )}
             <Input 
                 key="nota"
                 label ="Nota"
