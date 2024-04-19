@@ -21,9 +21,9 @@ export function EditForm(resenha: Resenha){
 
     return(
         
-        <form action={formAction} className="flex flex-col gap-3 bg-purple-700 p-6 m-6 rounded min-w-[500px]">
+        <form action={formAction} className="flex flex-col gap-3 p-10 m-6 rounded min-w-[700px]"style={{ backgroundColor: '#E6D6C1',boxShadow: '-3px 4px 10px rgba(0, 0, 0, 0.1)' , borderRadius: '40px'} }>
             <input type="hidden" name="id" value={resenha.id} />
-            <h2 className="text-2xl font-bold">Editar Resenha {resenha.tituloResenha}</h2>
+            <h2 className="text-2xl font-bold"style={{ color: "#744938" }}>EDITAR RESENHA {resenha.tituloResenha}</h2>
             <Input
                 key="tituloResenha"
                 label="Titulo da resenha"
@@ -62,7 +62,7 @@ export function EditForm(resenha: Resenha){
             
             <div className="flex justify-between mt-4">
                 <Link href="/resenha">
-                <Button variant="bordered" startContent={<ArrowLeft/>}>Cancelar</Button>
+                <Button radius='full'variant="bordered" startContent={<ArrowLeft/>}style={{ color: "#744938" }}>Cancelar</Button>
                 </Link>
                 <SubmitButton/>
             

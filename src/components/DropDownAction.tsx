@@ -30,7 +30,7 @@ export function DropDownAction({onEdit, onDelete}: DropDownActionProps){
             key="edit" 
             startContent={<Pencil/>}
             onClick={onEdit}
-            
+            color="primary"
             >
                 Editar
         </DropdownItem>

@@ -8,7 +8,7 @@ export function SubmitButton(){
     const { pending } = useFormStatus()
 
     return (
-        <Button type="submit" className="bg-violet-500" startContent={<Check />} isLoading={pending}>
+        <Button radius="full" type="submit"  style={{ backgroundColor: '#744938' } } startContent={<Check />} isLoading={pending}>
             Salvar
         </Button>
     )

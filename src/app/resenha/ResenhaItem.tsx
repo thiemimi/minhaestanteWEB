@@ -26,7 +26,7 @@ export default function ResenhaItem(props: ResenhaItemProps){
            );
     }
     return(
-        <div key={resenha.id} className="inline-block justify-between bg-purple-950 rounded min-w-[250px] min-h-[200px] p-4 m-4" id="data-row">
+        <div key={resenha.id} className="inline-block justify-between rounded min-w-[250px] min-h-[200px] p-4 m-4" id="data-row"style={{ backgroundColor: '#744938', boxShadow: '-3px 4px 10px rgba(0, 0, 0, 0.1)'} } >
             <div className="flex gap-1 justify-between">
                 <div className="flex flex-col">
                     <div>
