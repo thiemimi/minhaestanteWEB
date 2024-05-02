@@ -4,7 +4,7 @@ import { Plus } from "lucide-react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { getResenhas } from "../actions/resenhas/get";
-import { color } from "framer-motion";
+
 
 interface Resenha{
   id: number,

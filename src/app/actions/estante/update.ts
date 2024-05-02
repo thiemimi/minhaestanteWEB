@@ -7,10 +7,10 @@ export async function update(prevState: any,formData: FormData){
 
     const id = formData.get("id")
     const data = {
-      tituloResenha: formData.get("tituloResenha"),
-      conteudoResenha: formData.get("conteudoResenha"),
-      nota: formData.get("nota"),
-      icone: formData.get("book")
+      tituloLivro: formData.get("tituloLivro"),
+      genero: formData.get("genero"),
+      autor: formData.get("autor"),
+      StatusLeitura: formData.get("StatusLeitura")
     }
 
     const options = {
@@ -22,10 +22,10 @@ export async function update(prevState: any,formData: FormData){
 
     }
 
-    const resp = await fetch (`${process.env.API_BASE_URL}/resenha/${id}`, options)
+    const resp = await fetch (`${process.env.API_BASE_URL}/estante/${id}`, options)
 
     if (resp.ok){
-      redirect("/resenha")
+      redirect("/estante")
     }
     
     if (resp.status == 400){
