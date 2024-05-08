@@ -1,5 +1,5 @@
 import NavBar from "@/components/NavBar";
-import EstanteItem  from "./EstanteItem";
+import { EstanteItem } from "./EstanteItem";
 import { Plus } from "lucide-react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
@@ -11,7 +11,6 @@ interface Resenha{
   tituloLivro: string,
   genero: string,
   autor: string,
-  StatusLeitura: string
 }
 
 export default async function Estante() {

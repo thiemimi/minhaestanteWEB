@@ -10,7 +10,7 @@ export async function update(prevState: any,formData: FormData){
       tituloLivro: formData.get("tituloLivro"),
       genero: formData.get("genero"),
       autor: formData.get("autor"),
-      StatusLeitura: formData.get("StatusLeitura")
+      icone: formData.get("icone")
     }
 
     const options = {
@@ -36,7 +36,7 @@ export async function update(prevState: any,formData: FormData){
 
     if (resp.status == 404){
       return{
-        messageNome: "resenha não encontrada"
+        messageNome: "livro não encontrado"
       }
     }
     

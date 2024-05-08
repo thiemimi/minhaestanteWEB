@@ -10,7 +10,9 @@ export async function update(prevState: any,formData: FormData){
       tituloResenha: formData.get("tituloResenha"),
       conteudoResenha: formData.get("conteudoResenha"),
       nota: formData.get("nota"),
-      icone: formData.get("book")
+      estante: {
+        id: formData.get("estante")
+      }
     }
 
     const options = {

@@ -54,18 +54,6 @@ export function EditForm(resenha: Resenha){
                 labelPlacement={"outside"}
                 name="nota"
             />
-            <Autocomplete
-                label="icone"
-                placeholder="Procurar icone"
-                defaultItems={icons}
-                labelPlacement={"outside"}
-                name="icone"
-                defaultInputValue={resenha.icone}   
-            >
-                {(icon) =><AutocompleteItem key={icon.name} startContent={<Icon name={icon.name}/>}>
-                            {icon.name}
-                            </AutocompleteItem>}
-            </Autocomplete>
             
             <div className="flex justify-between mt-4">
                 <Link href="/resenha">

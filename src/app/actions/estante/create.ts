@@ -8,8 +8,7 @@ export async function create(prevState: any,formData: FormData){
     const data = {
       tituloLivro: formData.get("tituloLivro"),
       genero: formData.get("genero"),
-      autor: formData.get("autor"),
-      //StatusLeitura: formData.get("StatusLeitura")
+      autor: formData.get("autor")
     }
 
     const options = {
