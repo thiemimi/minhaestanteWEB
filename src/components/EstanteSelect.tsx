@@ -15,7 +15,6 @@ export function EstanteSelect({estantes, onChange}: EstanteSelectProps) {
         <Select
             items={estantes}
             label="Livro"
-            variant="bordered"
             name="estante"
             placeholder="Selecione um livro"
             labelPlacement="outside"
