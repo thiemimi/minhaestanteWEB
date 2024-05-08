@@ -5,12 +5,14 @@ import { Autocomplete, AutocompleteItem, Input, Textarea } from "@nextui-org/rea
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
-import { create } from "@/app/actions/resenhas/create";
+import { create } from "@/app/actions/estante/create";
 import { SubmitButton } from "@/components/SubmitButton";
 import { useFormState } from "react-dom";
+import { icons } from "@/app/utils/icons";
+import Icon from "@/components/Icon";
 
 const initialState = {
-  messageNome: '',
+  //messageNome: '',
 }
 
 export default function CadastrarEstante() {
@@ -27,8 +29,8 @@ export default function CadastrarEstante() {
             label="Titulo do livro"
             labelPlacement={"outside"}
             name="tituloLivro"
-            isInvalid={state?.messageNome != ''}
-            errorMessage={state?.messageNome}
+            //isInvalid={state?.messageNome != ''}
+            //errorMessage={state?.messageNome}
           />
           
           <Input 
@@ -43,6 +45,18 @@ export default function CadastrarEstante() {
             labelPlacement={"outside"}
             name="autor"
           />
+
+          <Autocomplete
+              label="icone"
+              placeholder="Procurar icone"
+              defaultItems={icons}
+              name="icone"
+              labelPlacement={"outside"}
+            >
+              {(icon) =><AutocompleteItem key={icon.name} startContent={<Icon name={icon.name}/>}>
+                          {icon.name}
+                        </AutocompleteItem>}
+          </Autocomplete>
         
           <div className="flex justify-between mt-4">
             <Link href="/estante">

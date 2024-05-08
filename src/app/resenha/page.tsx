@@ -10,7 +10,6 @@ interface Resenha{
   id: number,
   tituloResenha: string,
   conteudoResenha: string,
-  icone: string,
   nota: number
 }
 
