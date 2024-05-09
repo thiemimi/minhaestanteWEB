@@ -22,7 +22,7 @@ export function EstanteSelect({estantes, onChange}: EstanteSelectProps) {
         >
             {(estante) => 
                 <SelectItem key={estante.tituloLivro} startContent={<Icon name={estante.icone} />}>
-                    {estante.tituloLivro}
+                    {estante.tituloLivro}  
                 </SelectItem>
             }
         </Select>
