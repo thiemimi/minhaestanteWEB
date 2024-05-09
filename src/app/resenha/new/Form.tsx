@@ -1,6 +1,6 @@
 'use client'
 
-import NavBar from "@/components/NavBar";
+import { EstanteSelect }  from "@/components/EstanteSelect";
 import { Autocomplete, AutocompleteItem, Input, Textarea } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
@@ -8,7 +8,6 @@ import { ArrowLeft, Check } from "lucide-react";
 import { create } from "@/app/actions/resenhas/create";
 import { SubmitButton } from "@/components/SubmitButton";
 import { useFormState } from "react-dom";
-import { EstanteSelect } from "@/components/EstanteSelect";
 
 
 const initialState = {

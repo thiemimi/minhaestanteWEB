@@ -8,7 +8,8 @@ export async function create(prevState: any,formData: FormData){
     const data = {
       tituloLivro: formData.get("tituloLivro"),
       genero: formData.get("genero"),
-      autor: formData.get("autor")
+      autor: formData.get("autor"),
+      icone: formData.get("icone")
     }
 
     const options = {
@@ -20,7 +21,7 @@ export async function create(prevState: any,formData: FormData){
 
     }
     
-    const resp = await fetch (process.env.API_BASE_URL + "/estante", options)
+    const resp = await fetch (`${process.env.API_BASE_URL}/estante`, options)
 
     if (resp.ok){
       redirect("/estante")

@@ -8,7 +8,7 @@ export default async function CadastrarResenhas() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <NavBar active="resenha" />
+            <NavBar active="resenhas" />
 
             <Form estantes={estantes} />
             
